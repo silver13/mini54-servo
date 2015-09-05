@@ -1,3 +1,6 @@
+//Bug update: place servoinit() before lib_adc_init() if using adc
+//
+//
 // servo library for mini54 boards
 // the library supports exactly one servo
 //
@@ -8,7 +11,7 @@
 // #include "servo.h"
 //
 //
-// in setup call
+// in setup call ( before adc init)
 // servoinit();
 //
 // call each loop
