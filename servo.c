@@ -54,9 +54,11 @@ void TMR0_IRQHandler(void)
 
 void servoinit()
 {
-	// enable clock to timers 0 and 1
-  CLK->APBCLK = CLK->APBCLK|12; 
-	// set clock source and divider
+  // enable clock to timers 0 and 1
+  //CLK->APBCLK = CLK->APBCLK|12UL; 
+  CLK_EnableModuleClock(TMR0_MODULE);
+
+// set clock source and divider
   CLK_SetModuleClock(TMR0_MODULE , CLK_CLKSEL1_TMR0_S_IRC22M , 1);
 
 	// pulse timer setup ( timer0)
